@@ -1,9 +1,9 @@
-describe('example to-do app', () => {
+describe('User authentication tests', () => {
     beforeEach(() => {
         cy.visit('www.demoblaze.com/');
       })
 
-      it('displays two todo items by default', () => {
+      it('Test sign up', () => {
         cy.title().should('eq', 'STORE');
       })
 
