@@ -1,4 +1,5 @@
 import mainPage from "./POM/mainPage";
+import upperMenu from "./POM/upperMenu";
 
 describe('User authentication tests', () => {
     beforeEach(() => {
@@ -7,7 +8,8 @@ describe('User authentication tests', () => {
       })
 
       it('Test sign up', () => {
-        
+        upperMenu.goToHome()
+        //cy.get('#login2').click()
       })
 
 })
