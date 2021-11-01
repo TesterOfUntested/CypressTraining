@@ -1,8 +1,8 @@
 class signUpPage{
 
     signUp(username, password){
-        cy.get('#sign-username').clear().type(username)
-        cy.get("[type='password']").first().type(password)
+        cy.get('#sign-username').invoke('val', username)
+        cy.get("[type='password']").first().invoke('val', password)
         cy.get('.btn').contains('Sign up').click()
     }
 }
