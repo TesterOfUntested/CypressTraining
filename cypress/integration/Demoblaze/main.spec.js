@@ -1,10 +1,21 @@
+import mainPage from "./POM/mainPage";
+import signUpPage from "./POM/signUpPage";
+import upperMenu from "./POM/upperMenu";
+import generator from "./utils/generator";
+
 describe('User authentication tests', () => {
-    beforeEach(() => {
+  
+  var username = generator.generateUsername()
+
+    before(() => {
         cy.visit('www.demoblaze.com/');
+        cy.title().should('eq', mainPage.pageTitle)
+        
       })
 
       it('Test sign up', () => {
-        cy.title().should('eq', 'STORE');
+        upperMenu.goToSignUp()
+        signUpPage.signUp(username, 'password')
       })
 
 })
