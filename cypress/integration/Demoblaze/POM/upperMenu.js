@@ -24,5 +24,9 @@ class upperMenu{
         cy.get('.nav-link').contains('Sign up').click()
     }
 
+    goToLogOut(){
+        cy.get('.nav-link').contains('Log out').click()
+    }
+
 }
 export default new upperMenu

@@ -7,12 +7,13 @@ import generator from "./utils/generator";
 describe('User authentication tests', () => {
   
   var username = generator.generateUsername()
-  alert(username)
 
     before(() => {
         cy.visit('www.demoblaze.com/');
-        cy.title().should('eq', mainPage.pageTitle)
-        
+      })
+
+      it('Main Page not logged tests', () => {
+        mainPage.notLoggedChecker()
       })
 
       it('Test sign up', () => {
@@ -24,5 +25,13 @@ describe('User authentication tests', () => {
         upperMenu.goToLogIn()
         logInPage.logIn(username, 'password')
       })
+
+      it('Main Page logged tests', () => {
+        mainPage.loggedChecker()
+      })
+
+    after(() => {
+      upperMenu.goToLogOut()
+    })
 
 })
