@@ -10,4 +10,4 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
       - name: Cypress run
-        run: npx cypress run --record --key CYPRESS_RECORD_KEY
+        run: npx cypress run --spec cypress/integration/Demoblaze/*spec.js --record --key ${{secret.SECRET_KEY}}
