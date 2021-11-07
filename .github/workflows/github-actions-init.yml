@@ -13,8 +13,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          # we have already installed all dependencies above
-          install: false
+          install: true
           start: npm ci
           wait-on-timeout: 120
           browser: chrome
