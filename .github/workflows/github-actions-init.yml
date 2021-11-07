@@ -9,6 +9,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cypress run
-        run: npx cypress run --spec cypress/integration/Demoblaze/*spec.js --record --key "$CYPRESS_RECORD_KEY"
+        uses: cypress-io/github-action@v2
+        with:
+          # we have already installed all dependencies above
+          install: false
+          start: npm ci
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+          parallel: true
+          spec: cypress/integration/Demoblaze/*.spec.js
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
