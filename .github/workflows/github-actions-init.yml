@@ -3,26 +3,15 @@
 name: Github CI
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+on: [push]
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install node
-        uses: actions/setup-node@v2
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
         with:
-            node:version: '14'
-      - name: Install dependencies
-        run: npm install       
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+          start: npm start
+          wait-on: "http://localhost:5000"
+          browser: chrome
+          headless: true
