@@ -1,10 +1,10 @@
-# This is a basic workflow to help you get started with Actions
+name: Cypress Tests
 
-name: Github CI
 on: [push]
+
 jobs:
   cypress-run:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -12,3 +12,6 @@ jobs:
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
