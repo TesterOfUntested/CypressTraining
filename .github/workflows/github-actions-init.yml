@@ -4,15 +4,18 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-20.04
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     environment: dashboard-secret
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        
       - name: Download the build folders
         uses: actions/download-artifact@v2
         with:
           name: build
           path: build
+          
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
