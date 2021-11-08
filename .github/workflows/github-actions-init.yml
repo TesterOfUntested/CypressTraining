@@ -13,12 +13,23 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          install: true
-          start: npm ci
-          wait-on-timeout: 120
-          browser: chrome
-          record: true
-          parallel: true
-          spec: cypress/integration/Demoblaze/*.spec.js
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
+          build: npm run build
+          start: npm start
+          
+          
+          
+          
+          
+          
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v2
+#         with:
+#           install: true
+#           start: npm ci
+#           wait-on-timeout: 120
+#           browser: chrome
+#           record: true
+#           parallel: true
+#           spec: cypress/integration/Demoblaze/*.spec.js
+#         env:
+#           CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
