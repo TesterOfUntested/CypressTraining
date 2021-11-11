@@ -12,3 +12,5 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           spec: cypress/integration/Demoblaze/*spec.js
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
