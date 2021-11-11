@@ -9,12 +9,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-          
-      - name: Cypress install
+      - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          runTests: false
-          build: yarn build
+          build: npm run build
+          start: npm start
           
           
           
