@@ -1,0 +1,23 @@
+{
+  "name": "cypresstraining",
+  "version": "1.0.0",
+  "description": "Cypress training on Demoblaze",
+  "main": "cypress\\integration\\Demoblaze\\main.spec.js",
+  "dependencies": {
+    "cypress": "^8.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx cypress run --spec cypress/integration/Demoblaze/*spec.js --record --key b6b3e6e9-5825-47e8-bd19-4d138a833f3d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TesterOfUntested/CypressTraining.git"
+  },
+  "author": "TesterOfUntested",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TesterOfUntested/CypressTraining/issues"
+  },
+  "homepage": "https://github.com/TesterOfUntested/CypressTraining#readme"
+}

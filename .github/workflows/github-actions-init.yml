@@ -1,10 +1,11 @@
-name: Cypress Tests
-
+name: Cypress tests
 on: [push]
-
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    name: Cypress run
+    runs-on: ubuntu-20.04
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    environment: dashboard-secret
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -13,3 +14,21 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          
+          
+          
+          
+          
+          
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v2
+#         with:
+#           install: true
+#           start: npm ci
+#           wait-on-timeout: 120
+#           browser: chrome
+#           record: true
+#           parallel: true
+#           spec: cypress/integration/Demoblaze/*.spec.js
+#         env:
+#           CYPRESS_RECORD_KEY: ${{ secrets.SECRET_KEY }}
