@@ -2,11 +2,14 @@ import logInPage from "./POM/logInPage";
 import mainPage from "./POM/mainPage";
 import signUpPage from "./POM/signUpPage";
 import upperMenu from "./POM/upperMenu";
+import phonesPage from "./POM/phonesPage";
 import generator from "./utils/generator";
+import phonePage from "./POM/phonePage";
 
 describe('User authentication tests', () => {
   
   var username = generator.generateUsername()
+  var phoneName = 'Samsung galaxy s6'
 
     before(() => {
         cy.visit('www.demoblaze.com/');
@@ -30,8 +33,17 @@ describe('User authentication tests', () => {
         mainPage.loggedChecker()
       })
 
+      it('Phones cart test', () =>{
+        mainPage.goToPhones()
+        phonesPage.checkHowManyPhones(7)
+        phonesPage.goToPhonePage(phoneName)
+        phonePage.addPhoneToCart(phoneName)
+      })
+
     after(() => {
-      upperMenu.goToLogOut()
+      upperMenu.goToHome()
+      if(upperMenu.checkIfLogged())
+        upperMenu.goToLogOut()
     })
 
 })

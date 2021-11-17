@@ -28,5 +28,14 @@ class upperMenu{
         cy.get('.nav-link').contains('Log out').click()
     }
 
+    checkIfLogged(){
+        cy.get('.nav-link').contains('Log out').then($text => {
+            if ($text.is(':visible')){
+              return false
+            }
+            return true
+          })
+    }
+
 }
 export default new upperMenu

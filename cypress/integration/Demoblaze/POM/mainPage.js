@@ -39,6 +39,10 @@ class mainPage {
         cy.get(".col-lg-9").should("be.visible")
     }
 
+    goToPhones(){
+        cy.get("#itemc").contains("Phones").click()
+    }
+
 
 
 }
