@@ -22,7 +22,7 @@ class phonePage{
         this.checkTitle()
         this.checkPhoneName(phoneName)
         this.clickAddToCart()
-        this.checkAddedAlert()
+        cy.wait(1000)
     }
 
 }
