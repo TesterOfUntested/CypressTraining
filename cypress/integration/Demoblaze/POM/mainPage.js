@@ -39,8 +39,16 @@ class mainPage {
         cy.get(".col-lg-9").should("be.visible")
     }
 
+    goToPhones(){
+        cy.get("a").contains("Phones").click()
+    }
+
+    goToLaptops(){
+        cy.get("a").contains("Laptops").click()
+    }
+
 
 
 }
 
-export default new mainPage()
+export default new mainPage
