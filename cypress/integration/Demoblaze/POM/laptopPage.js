@@ -21,7 +21,7 @@ class laptopPage{
         this.checkTitle()
         this.checkLaptopName(laptopName)
         this.clickAddToCart()
-        this.checkAddedAlert()
+        cy.wait(1000)
     }
 }
 export default new laptopPage

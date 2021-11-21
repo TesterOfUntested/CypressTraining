@@ -54,6 +54,18 @@ describe('User authentication tests', () => {
       });
 
       it('Cart insertion test', () => {
+          mainPage.goToPhones();
+          phonesPage.checkHowManyPhones(7);
+          phonesPage.goToPhonePage(phoneName);
+          phonePage.addPhoneToCart(phoneName)
+
+          upperMenu.goToHome();
+
+          mainPage.goToLaptops();
+          laptopsPage.checkHowManyLaptops(6);
+          laptopsPage.goToLaptopPage(laptopName);
+          laptopPage.addLaptopToCart(laptopName);
+
           upperMenu.goToCart();
           cartPage.checkTotalAmount(phonePrice + laptopPrice);
           cartPage.checkIfProductAdded(laptopName, laptopPrice);
