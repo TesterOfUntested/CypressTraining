@@ -40,11 +40,15 @@ class mainPage {
     }
 
     goToPhones(){
-        cy.get("#itemc").contains("Phones").click()
+        cy.get("a").contains("Phones").click()
+    }
+
+    goToLaptops(){
+        cy.get("a").contains("Laptops").click()
     }
 
 
 
 }
 
-export default new mainPage()
+export default new mainPage

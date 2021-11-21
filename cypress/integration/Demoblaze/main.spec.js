@@ -36,7 +36,7 @@ describe('User authentication tests', () => {
         mainPage.loggedChecker();
       });
 
-      it('Phones cart test', () =>{
+      it('Phones cart test', () => {
         mainPage.goToPhones();
         phonesPage.checkHowManyPhones(7);
         phonesPage.goToPhonePage(phoneName);
@@ -49,11 +49,5 @@ describe('User authentication tests', () => {
         laptopsPage.goToLaptopPage(laptopName);
         laptopPage.addLaptopToCart(laptopName);
       });
-
-    after(() => {
-      upperMenu.goToHome();
-      if(upperMenu.checkIfLogged());
-        upperMenu.goToLogOut();
-    });
 
 })
